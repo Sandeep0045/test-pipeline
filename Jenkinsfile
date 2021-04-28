@@ -4,10 +4,11 @@ pipeline{
     tools  {
           terraform 'terraform-11'
 
-     }
+     }        
+
      parameter {
-        properties([parameters([string(defaultValue: 't2.micro', description: 'write instance type you want', name: 'instance_type', trim: false)])])
-        properties([parameters([string(defaultValue: '', description: 'region you want', name: 'region', trim: false)])])
+        string(name: 'instance_type', defaultValue: 't2.micro', description: 'select ins type')
+        string(name: 'region', defaultValue: 't2.micro', description: 'select region')
      }
      stages{
           stage('Git Checkout'){
