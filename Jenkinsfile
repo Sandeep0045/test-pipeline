@@ -27,7 +27,7 @@ pipeline{
           stage('Terraform Plan'){
               steps{
                    sh """
-                       terraform plan -input=false -out myplan -var instance_type=${params.instance_type} --var-file=terraform${params.region}.tfvars
+                       terraform plan -input=false -out myplan -var instance_type=${params.instance_type} --var-file=${params.region}.tfvars
                         
                    """               
                                
