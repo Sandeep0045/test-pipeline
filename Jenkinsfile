@@ -8,7 +8,7 @@ pipeline{
 
      parameters {
         string(name: 'instance_type', defaultValue: 't2.micro', description: 'select ins type')
-        string(name: 'region', defaultValue: 't2.micro', description: 'select region')
+        string(name: 'region', defaultValue: '', description: 'select region')
      }
      stages{
           stage('Git Checkout'){
